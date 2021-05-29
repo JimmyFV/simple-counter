@@ -9,14 +9,20 @@ import "bootstrap";
 
 //include your index.scss file into the bundle
 import "../styles/index.scss";
-import { prototype } from "html-webpack-plugin";
-import { checkPropTypes } from "prop-types";
+// import { prototype } from "html-webpack-plugin";
+// import { checkPropTypes } from "prop-types";
 
 function SimpleCounter(props) {
 	return (
 		<div className="big-counter">
 			<div className="calendar">
-				<img src={icon} style={{ with: "40px", height: "40px" }} />
+				<img
+					src={icon}
+					style={{
+						with: "40px",
+						height: "50px"
+					}}
+				/>
 			</div>
 			<div className="four">{props.digitFour % 10}</div>
 			<div className="three">{props.digitThree % 10}</div>
@@ -26,7 +32,7 @@ function SimpleCounter(props) {
 	);
 }
 
-SimpleCounter.prototype = {
+SimpleCounter.propTypes = {
 	digitFour: PropTypes.number,
 	digitThree: PropTypes.number,
 	digitTwo: PropTypes.number,
